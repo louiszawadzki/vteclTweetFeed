@@ -16,6 +16,9 @@ var server = http.createServer(app).listen(port, function() {
   console.log("yippie");
 });
 
+//socket.io
+var io = socketio.listen(server);
+
 // twitter
 var client = new twitter({
   consumer_key: twitterk.key,
@@ -24,17 +27,14 @@ var client = new twitter({
   access_token_secret: twitterk.tsecret
 });
 
-var params = {track: 'vtecl'};
+var params = {track: 'lamar'}; //for dev purpose only
+//var params = {track: 'vtecl'};
 client.stream('statuses/filter', params, function(stream){
   stream.on('data', function(tweet) {
-    console.log(tweet.text);
+    io.emit('tweet', tweet.text);
   });
 
   stream.on('error', function(error) {
     console.log(error);
   });
 });
-
-
-//socket.io
-var io = socketio.listen(server);

@@ -31,7 +31,8 @@ var params = {track: 'lamar'}; //for dev purpose only
 //var params = {track: 'vtecl'};
 client.stream('statuses/filter', params, function(stream){
   stream.on('data', function(tweet) {
-    io.emit('tweet', tweet.text);
+    console.log(tweet);
+    io.emit('tweet', tweet);
   });
 
   stream.on('error', function(error) {

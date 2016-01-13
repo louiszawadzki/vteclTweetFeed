@@ -12,7 +12,14 @@ var CommentList = React.createClass({
     var tweets = this.props.data.map(function(comment) {
       return (
         <div className="tweet" key={comment.id}>
-          {comment.text}
+          <div className="authorPic" style={{backgroundImage: 'url(' + comment.user.profile_image_url+ ')'}}>
+          </div>
+          <div className="tweetText">
+            <div className="author">
+              {comment.user.name}
+            </div>
+            {comment.text}
+          </div>
         </div>
       );
     });
@@ -31,13 +38,13 @@ var CommentBox = React.createClass({
     // get the existing list of tweets
     var box = this;
     socket.on('tweet', function(data) {
-      box.setState({data: box.state.data.concat([data])});
+      box.setState({data: [data].concat(box.state.data)});
     });
   },
   render: function() {
     return (
       <div className="commentBox">
-        <h1>vtecl</h1>
+        <h1>#vtecl</h1>
         <CommentList data={this.state.data} />
       </div>
     );

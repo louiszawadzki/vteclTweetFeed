@@ -27,8 +27,8 @@ var client = new twitter({
   access_token_secret: twitterk.tsecret
 });
 
-var params = {track: 'lamar'}; //for dev purpose only
-//var params = {track: 'vtecl'};
+//var params = {track: 'lamar'}; //for dev purpose only
+var params = {track: 'vtecl'};
 client.stream('statuses/filter', params, function(stream){
   stream.on('data', function(tweet) {
     console.log(tweet);

@@ -1,10 +1,45 @@
 .commentBox {
+  width: 60%;
+  margin: auto;
+  font-family: 'News Cycle', sans-serif;
+  font-weight: 700;
+}
 
+h1{
+  text-align: center;
+  font-size: 48px;
 }
 
 .commentList {
+  height: 500px;
+  overflow-y: scroll;
+  border-top: 1px rgb(191, 224, 236) solid;
+}
 
+.tweetText{
+  width: 90%;
+  display: inline-block;
+}
+.authorPic{
+  width: 48px;
+  height: 48px;
+  border-radius: 24px;
+  -webkit-border-radius: 24px;
+  -moz-border-radius: 24px;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.author{
+  font-weight: 700;
 }
 
 .tweet {
+  font-family: 'News Cycle', sans-serif;
+  font-weight: 400;
+  border-bottom: 1px rgb(191, 224, 236) solid;
+  border-right: 1px rgb(191, 224, 236) solid;
+  border-left: 1px rgb(191, 224, 236) solid;
+  padding: 5px;
+  background-color: rgb(229, 242, 247);
 }

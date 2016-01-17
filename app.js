@@ -46,7 +46,6 @@ var schema = new mongoose.Schema({
 // method to get the tweets from the db
 schema.statics.getTweets = function (start, callback) {
   var tweets = [];
-  // issue with the .find method
   Tweet.find({}, 'id author avatar text date', {skip: start, limit: 10}).exec(function(err,docs){
     if(!err) {
       console.log(docs);
@@ -57,6 +56,8 @@ schema.statics.getTweets = function (start, callback) {
       console.log(err);
     }
   });
+
+  //Find all the authors
 };
 
 var Tweet = mongoose.model('Tweet', schema);
@@ -73,6 +74,7 @@ client.stream('statuses/filter', streamParams, function(stream){
       text: data['text'],
       date: data['created_at']
     };
+    //add +1 to the author in db
     var tweetEntry = new Tweet(tweet);
     tweetEntry.save(function(err) {
       if (!err) {

@@ -40,6 +40,7 @@ var CommentBox = React.createClass({
     var self = this;
     socket.on('tweet', function(data) {
       self.setState({data: [data].concat(self.state.data)});
+      // add +1 to the author
     });
   },
   render: function() {

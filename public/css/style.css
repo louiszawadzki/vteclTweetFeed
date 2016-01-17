@@ -1,8 +1,8 @@
 .commentBox {
   width: 35%;
   margin-left: 5%;
-  font-family: 'News Cycle', sans-serif;
-  font-weight: 700;
+  font-family: 'Lato', sans-serif;
+  font-weight: 600;
 }
 
 h1{
@@ -17,7 +17,7 @@ h1{
 }
 
 .tweetText{
-  width: 90%;
+  width: 80%;
   display: inline-block;
 }
 .authorPic{
@@ -35,7 +35,7 @@ h1{
 }
 
 .tweet {
-  font-family: 'News Cycle', sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 400;
   border-bottom: 1px rgb(191, 224, 236) solid;
   border-right: 1px rgb(191, 224, 236) solid;
